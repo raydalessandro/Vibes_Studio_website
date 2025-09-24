@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - Vibes Studio Milano | La Nostra Storia e Passione</title>
+    <meta name="description" content="Scopri la storia di Vibes Studio Milano: chi siamo, la nostra passione per l'hip hop e come portiamo il sound americano nel cuore di Milano Baggio.">
+    <meta name="keywords" content="vibes studio milano storia, team studio registrazione, hip hop milano, produttori musicali milano">
+    <link rel="canonical" href="https://vibesstudio.it/chi-siamo.html">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --secondary-gold: #ff8f00;
+            --bg-dark: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: rgba(255, 193, 7, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation - same as homepage */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .story-text h3 {
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .story-image {
+            background: var(--bg-card);
+            height: 400px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+        }
+
+        .story-image-placeholder {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 193, 7, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #000;
+        }
+
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-gold);
+        }
+
+        .team-role {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+            background: var(--bg-dark);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+        }
+
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 193, 7, 0.5);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .contact-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.5);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-image {
+                height: 300px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: #25d366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulseWhatsApp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-float-icon {
+            color: white;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        @keyframes pulseWhatsApp {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
+            }
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float-icon {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <svg class="nav-logo" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="20" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ffc107">VIBES</text>
+                <text x="20" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="300" fill="white">STUDIO</text>
+            </svg>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="chi-siamo.html" class="nav-link active">Chi Siamo</a></li>
+                <li><a href="servizi.html" class="nav-link">Servizi</a></li>
+                <li><a href="studio.html" class="nav-link">Lo Studio</a></li>
+                <li><a href="beats.html" class="nav-link">Beats</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" style="display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; padding: 5px;" aria-label="Menu">
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/393463086154?text=Ciao%20Vibes%20Studio!%20Vorrei%20informazioni%20sui%20vostri%20servizi', '_blank')" title="Contattaci su WhatsApp" style="cursor: pointer;">
+        <span class="whatsapp-float-icon">💬</span>
+    </div>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="page-title">Chi Siamo</h1>
+                <p class="page-subtitle">
+                    La passione per l'hip hop americano incontra l'energia creativa di Milano
+                </p>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-grid fade-in">
+                    <div class="story-text">
+                        <h3>La Nostra Storia</h3>
+                        <p>
+                            <span class="highlight">Vibes Studio</span> nasce nel 2023 dall'incontro di giovani talenti 
+                            milanesi con una passione comune: portare il <span class="highlight">sound autentico dell'hip hop americano</span> 
+                            nel cuore di Milano Baggio.
+                        </p>
+                        <p>
+                            Il nostro studio è nato dall'esperienza diretta di uno dei founder che divide la sua vita 
+                            tra l'Italia e gli <span class="highlight">Stati Uniti</span>, portando con sé le influenze, 
+                            i suoni e le tecniche apprese dai migliori studi di Atlanta, Los Angeles e New York.
+                        </p>
+                        <p>
+                            Ogni giorno lavoriamo per creare un ponte culturale che unisce la tradizione musicale 
+                            italiana con l'innovazione e l'energia dell'hip hop contemporaneo americano.
+                        </p>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-image-placeholder">
+                            🎵 Foto dello studio<br>
+                            (Inserire immagine del team al lavoro)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-grid fade-in">
+                    <div class="story-image">
+                        <div class="story-image-placeholder">
+                            🎤 Foto sessione recording<br>
+                            (Inserire immagine di una sessione)
+                        </div>
+                    </div>
+                    <div class="story-text">
+                        <h3>La Nostra Missione</h3>
+                        <p>
+                            Crediamo che ogni artista abbia una storia unica da raccontare. La nostra missione è 
+                            fornire gli strumenti, l'ambiente e l'expertise necessari per trasformare idee creative 
+                            in <span class="highlight">produzioni professionali di qualità internazionale</span>.
+                        </p>
+                        <p>
+                            Non siamo solo un studio di registrazione: siamo <span class="highlight">partner creativi</span> 
+                            che accompagnano gli artisti in ogni fase del processo produttivo, dal primo demo 
+                            alla distribuzione finale.
+                        </p>
+                        <p>
+                            Il nostro obiettivo è creare un ecosistema dove talento locale e influenze globali 
+                            si fondono per dare vita a progetti musicali autentici e innovativi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Il Nostro Team</h2>
+                <div class="team-grid">
+                    <div class="team-card fade-in">
+                        <div class="team-avatar">🎧</div>
+                        <h3 class="team-name">Marco "Vibe" Rossi</h3>
+                        <p class="team-role">Founder & Producer</p>
+                        <p class="team-bio">
+                            Producer e sound engineer con 8 anni di esperienza tra Milano e Atlanta. 
+                            Specializzato in hip hop, trap e R&B contemporaneo. Ha lavorato con artisti 
+                            emergenti e consolidati della scena italiana e americana.
+                        </p>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-avatar">🎹</div>
+                        <h3 class="team-name">Alex "Beat" Johnson</h3>
+                        <p class="team-role">Beatmaker & Composer</p>
+                        <p class="team-bio">
+                            Nato a Chicago, trasferito a Milano nel 2022. Beatmaker specializzato in drill, 
+                            trap e boom bap. Le sue produzioni hanno ottenuto milioni di stream su Spotify 
+                            e sono state utilizzate da artisti internazionali.
+                        </p>
+                    </div>
+
+                    <div class="team-card fade-in">
+                        <div class="team-avatar">🎚️</div>
+                        <h3 class="team-name">Giulia "Mix" Bianchi</h3>
+                        <p class="team-role">Mix & Master Engineer</p>
+                        <p class="team-bio">
+                            Sound engineer laureata al SAE Institute di Milano. Specializzata in mixing 
+                            e mastering per generi urban. Ha collaborato con etichette indipendenti 
+                            italiane e internazionali.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title">I Nostri Valori</h2>
+                <div class="values-grid">
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🔥</div>
+                        <h3 class="value-title">Autenticità</h3>
+                        <p class="value-description">
+                            Manteniamo sempre il rispetto per le radici dell'hip hop, 
+                            portando autenticità in ogni produzione senza compromessi commerciali.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">⚡</div>
+                        <h3 class="value-title">Innovazione</h3>
+                        <p class="value-description">
+                            Utilizziamo le tecnologie più avanzate e le tecniche più innovative 
+                            per creare sound unici e competitivi a livello internazionale.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🤝</div>
+                        <h3 class="value-title">Collaborazione</h3>
+                        <p class="value-description">
+                            Crediamo nel lavoro di squadra e nella creazione di relazioni durature 
+                            con gli artisti, basate su fiducia e rispetto reciproco.
+                        </p>
+                    </div>
+
+                    <div class="value-card fade-in">
+                        <div class="value-icon">🎯</div>
+                        <h3 class="value-title">Eccellenza</h3>
+                        <p class="value-description">
+                            Ogni progetto è trattato con la massima attenzione ai dettagli, 
+                            puntando sempre al massimo livello qualitativo possibile.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contatti">
+            <div class="container">
+                <h2 class="section-title">Entra nel Vibe</h2>
+                <p style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    Pronto a far parte della famiglia Vibes Studio? Contattaci per scoprire come possiamo 
+                    realizzare insieme il tuo progetto musicale.
+                </p>
+
+                <div class="contact-grid">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📱</div>
+                        <h3 class="contact-title">Social Media</h3>
+                        <div class="contact-info">
+                            <p>Instagram: <a href="https://instagram.com/v.ibes.studio" class="contact-link" target="_blank">@v.ibes.studio</a></p>
+                            <p>Seguici per vedere i nostri lavori<br>e rimanere aggiornato sui progetti</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">📍</div>
+                        <h3 class="contact-title">Location</h3>
+                        <div class="contact-info">
+                            <p><strong>Milano, Baggio</strong></p>
+                            <p>Studio facilmente raggiungibile<br>con mezzi pubblici e auto</p>
+                            <p>Parcheggio disponibile</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">⏰</div>
+                        <h3 class="contact-title">Orari</h3>
+                        <div class="contact-info">
+                            <p><strong>Lun-Ven:</strong> 14:00 - 00:00</p>
+                            <p><strong>Sab-Dom:</strong> 10:00 - 02:00</p>
+                            <p>Sessioni anche fuori orario<br>su prenotazione</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">🎵</div>
+                        <h3 class="contact-title">Consulenza Gratuita</h3>
+                        <div class="contact-info">
+                            <p>Prima sessione:</p>
+                            <p><strong>Consulenza di 30 minuti gratuita</strong></p>
+                            <p>Per discutere il tuo progetto<br>e le tue esigenze</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://instagram.com/v.ibes.studio" class="cta-button" target="_blank">
+                    Contattaci su Instagram
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle - Universal function
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const spans = mobileMenuBtn.querySelectorAll('span');
+                    if (navMenu.classList.contains('active')) {
+                        spans[0].style.transform = 'rotate(-45deg) translate(-6px, 6px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(45deg) translate(-6px, -6px)';
+                    } else {
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, index) {
+                if (entry.isIntersecting) {
+                    setTimeout(function() {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
