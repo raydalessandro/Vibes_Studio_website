@@ -83,6 +83,19 @@
         .nav-link.active {
             color: var(--primary-gold);
         }
+        
+        /* Stile pulsante menu mobile */
+        .mobile-menu-btn {
+            display: none; /* Nascosto di default su desktop */
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
 
         /* Main Content */
         .main-content {
@@ -382,6 +395,16 @@
         }
 
         /* Mobile Styles */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+            
+            .nav-link {
+                font-size: 0.8rem;
+            }
+        }
+        
         @media (max-width: 768px) {
             .story-grid {
                 grid-template-columns: 1fr;
@@ -415,15 +438,9 @@
             .nav-menu.active {
                 display: flex;
             }
-        }
-
-        @media (max-width: 1024px) {
-            .nav-menu {
-                gap: 1.5rem;
-            }
             
-            .nav-link {
-                font-size: 0.8rem;
+            .mobile-menu-btn {
+                display: block; /* Mostra il pulsante su mobile */
             }
         }
 
@@ -444,18 +461,18 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            z-index: 9999;
+            z-index: 1001;
             background: #25d366;
             border-radius: 50%;
             width: 60px;
             height: 60px;
-            display: flex !important;
+            display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
-            animation: pulseWhatsApp 2s infinite;
+            animation: pulse 2s infinite;
         }
 
         .whatsapp-float:hover {
@@ -466,10 +483,9 @@
         .whatsapp-float-icon {
             color: white;
             font-size: 1.8rem;
-            line-height: 1;
         }
 
-        @keyframes pulseWhatsApp {
+        @keyframes pulse {
             0% {
                 box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             }
@@ -478,19 +494,6 @@
             }
             100% {
                 box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .whatsapp-float-icon {
-                font-size: 1.5rem;
             }
         }
     </style>
@@ -513,7 +516,7 @@
                 <li><a href="contatti.html" class="nav-link">Contatti</a></li>
             </ul>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn" style="display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; padding: 5px;" aria-label="Menu">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
@@ -521,9 +524,9 @@
         </div>
     </nav>
 
-    <div class="whatsapp-float" onclick="window.open('https://wa.me/393463086154?text=Ciao%20Vibes%20Studio!%20Vorrei%20informazioni%20sui%20vostri%20servizi', '_blank')" title="Contattaci su WhatsApp" style="cursor: pointer;">
+    <a href="https://wa.me/393463086154?text=Ciao%20Vibes%20Studio!%20Vorrei%20informazioni%20sui%20vostri%20servizi" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
         <span class="whatsapp-float-icon">💬</span>
-    </div>
+    </a>
 
     <main class="main-content">
         <section class="hero-section">
@@ -737,7 +740,7 @@
             const navMenu = document.querySelector('.nav-menu');
 
             if (mobileMenuBtn && navMenu) {
-                mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.addEventListener('click', () => {
                     navMenu.classList.toggle('active');
                     const spans = mobileMenuBtn.querySelectorAll('span');
                     if (navMenu.classList.contains('active')) {
@@ -759,10 +762,10 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry, index) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    setTimeout(function() {
+                    setTimeout(() => {
                         entry.target.classList.add('visible');
                     }, index * 100);
                     observer.unobserve(entry.target);
@@ -770,12 +773,12 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(function(el) {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
         // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
@@ -790,3 +793,4 @@
     </script>
 </body>
 </html>
+
