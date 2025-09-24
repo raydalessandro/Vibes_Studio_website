@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats & Tracce - Vibes Studio Milano | Beat Store, Trap, Hip Hop, Drill</title>
+    <meta name="description" content="Scopri la collezione di beat esclusivi di Vibes Studio Milano: Trap, Hip Hop, Drill, R&B. Acquista beat originali o commissiona produzioni personalizzate.">
+    <meta name="keywords" content="beat store milano, trap beats, hip hop instrumentals, drill beats italia, beat esclusivi">
+    <link rel="canonical" href="https://vibesstudio.it/beats.html">
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --secondary-gold: #ff8f00;
+            --bg-dark: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: rgba(255, 193, 7, 0.2);
+            --success-color: #28a745;
+            --play-color: #1db954;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 60px 0;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .filter-label {
+            color: var(--primary-gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .filter-select {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tag {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-gold);
+            color: #000;
+            border-color: var(--primary-gold);
+        }
+
+        /* Beat Grid */
+        .beats-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .beats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .beat-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .beat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 193, 7, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .beat-artwork {
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .beat-artwork::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+        }
+
+        .beat-artwork-placeholder {
+            z-index: 2;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .beat-artwork-icon {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(29, 185, 84, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .play-button:hover {
+            background: var(--play-color);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-button.playing {
+            background: var(--primary-gold);
+        }
+
+        .play-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 2px;
+        }
+
+        .pause-icon {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .beat-info {
+            padding: 25px;
+        }
+
+        .beat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .beat-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .beat-producer {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .beat-price {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .beat-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .beat-tag {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--primary-gold);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .beat-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .beat-spec {
+            text-align: center;
+        }
+
+        .beat-spec-label {
+            display: block;
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .beat-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .beat-button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .beat-button.primary {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+        }
+
+        .beat-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .beat-button.secondary {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+        }
+
+        .beat-button.secondary:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        /* Audio Player */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 15px 25px;
+            display: none;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1001;
+            backdrop-filter: blur(10px);
+            min-width: 300px;
+        }
+
+        .player-info {
+            flex: 1;
+        }
+
+        .player-title {
+            color: var(--text-primary);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+
+        .player-producer {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .player-button {
+            background: var(--primary-gold);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .player-button:hover {
+            transform: scale(1.1);
+        }
+
+        .player-close {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px;
+        }
+
+        .player-close:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            padding: 80px 0;
+            background: var(--bg-dark);
+        }
+
+        .featured-beat {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
+            border-radius: 20px;
+            padding: 60px;
+            border: 2px solid var(--primary-gold);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-beat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+        }
+
+        .featured-badge {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .featured-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .featured-description {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .featured-player {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .upload-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .upload-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .upload-description {
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .upload-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-label {
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .file-upload {
+            border: 2px dashed var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-gold);
+            background: rgba(255, 193, 7, 0.05);
+        }
+
+        .file-upload-icon {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .file-upload input {
+            display: none;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .filter-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .beats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .beat-specs {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .beat-actions {
+                flex-direction: column;
+            }
+
+            .featured-beat {
+                padding: 40px 20px;
+            }
+
+            .featured-title {
+                font-size: 2rem;
+            }
+
+            .audio-player {
+                left: 10px;
+                right: 10px;
+                transform: none;
+                min-width: unset;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            border-top-color: var(--primary-gold);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <svg class="nav-logo" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="20" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ffc107">VIBES</text>
+                <text x="20" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="300" fill="white">STUDIO</text>
+            </svg>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="servizi.html" class="nav-link">Servizi</a></li>
+                <li><a href="studio.html" class="nav-link">Lo Studio</a></li>
+                <li><a href="beats.html" class="nav-link active">Beats</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="page-title">Beats & Tracce</h1>
+                <p class="page-subtitle">
+                    Scopri la nostra collezione di beat esclusivi. Trap, Hip Hop, Drill e molto altro. 
+                    Trova il sound perfetto per il tuo progetto.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label class="filter-label">Genere:</label>
+                        <select class="filter-select" id="genreFilter">
+                            <option value="all">Tutti</option>
+                            <option value="trap">Trap</option>
+                            <option value="hiphop">Hip Hop</option>
+                            <option value="drill">Drill</option>
+                            <option value="rnb">R&B</option>
+                            <option value="afrobeat">Afrobeat</option>
+                            <option value="reggaeton">Reggaeton</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">BPM:</label>
+                        <select class="filter-select" id="bpmFilter">
+                            <option value="all">Tutti</option>
+                            <option value="slow">Slow (60-90)</option>
+                            <option value="medium">Medium (90-120)</option>
+                            <option value="fast">Fast (120-150)</option>
+                            <option value="very-fast">Very Fast (150+)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-label">Mood:</label>
+                        <div class="filter-tags">
+                            <button class="filter-tag active" data-mood="all">Tutti</button>
+                            <button class="filter-tag" data-mood="dark">Dark</button>
+                            <button class="filter-tag" data-mood="chill">Chill</button>
+                            <button class="filter-tag" data-mood="aggressive">Aggressive</button>
+                            <button class="filter-tag" data-mood="melodic">Melodic</button>
+                            <button class="filter-tag" data-mood="hard">Hard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Beat -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="featured-beat fade-in">
+                    <div class="featured-badge">Featured Beat</div>
+                    <h2 class="featured-title">"Milano Vibes"</h2>
+                    <p class="featured-description">
+                        Il nostro ultimo capolavoro: un beat trap scuro con influenze melodiche che cattura 
+                        perfettamente l'energia urbana di Milano. Prodotto esclusivamente per Vibes Studio.
+                    </p>
+                    <div class="featured-player">
+                        <button class="play-button" onclick="playFeatured()">
+                            <span class="play-icon">▶</span>
+                        </button>
+                        <div>
+                            <div class="player-title">Milano Vibes</div>
+                            <div class="player-producer">Produced by Vibes Studio</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#contact" class="cta-button" style="display: inline-block; width: auto; padding: 15px 40px;">
+                            Acquista Esclusiva - €120
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beats Grid -->
+        <section class="beats-section">
+            <div class="container">
+                <div class="beats-grid" id="beatsGrid">
+                    <!-- Beat Card 1 -->
+                    <div class="beat-card fade-in" data-genre="trap" data-bpm="140" data-mood="dark">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🎵</div>
+                                <div>Trap Dark Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('midnight-trap', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Midnight Trap</h3>
+                                    <p class="beat-producer">Prod. by Vibes Team</p>
+                                </div>
+                                <div class="beat-price">€35</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">Trap</span>
+                                <span class="beat-tag">Dark</span>
+                                <span class="beat-tag">808s</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>140</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>F# Minor</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>3:20</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €35</a>
+                                <a href="#" class="beat-button secondary">Exclusive €80</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beat Card 2 -->
+                    <div class="beat-card fade-in" data-genre="drill" data-bpm="150" data-mood="aggressive">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🔥</div>
+                                <div>Drill Hard Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('milano-drill', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Milano Drill</h3>
+                                    <p class="beat-producer">Prod. by Alex Beat</p>
+                                </div>
+                                <div class="beat-price">€40</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">Drill</span>
+                                <span class="beat-tag">Hard</span>
+                                <span class="beat-tag">UK Style</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>150</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>C Minor</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>2:45</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €40</a>
+                                <a href="#" class="beat-button secondary">Exclusive €90</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beat Card 3 -->
+                    <div class="beat-card fade-in" data-genre="rnb" data-bpm="85" data-mood="chill">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🌙</div>
+                                <div>R&B Smooth Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('smooth-vibes', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Smooth Vibes</h3>
+                                    <p class="beat-producer">Prod. by Vibe Master</p>
+                                </div>
+                                <div class="beat-price">€30</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">R&B</span>
+                                <span class="beat-tag">Chill</span>
+                                <span class="beat-tag">Neo-Soul</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>85</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>A Major</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>3:45</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €30</a>
+                                <a href="#" class="beat-button secondary">Exclusive €70</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beat Card 4 -->
+                    <div class="beat-card fade-in" data-genre="afrobeat" data-bpm="120" data-mood="melodic">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🌍</div>
+                                <div>Afrobeat Melodic Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('afro-fusion', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Afro Fusion</h3>
+                                    <p class="beat-producer">Prod. by World Beats</p>
+                                </div>
+                                <div class="beat-price">€35</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">Afrobeat</span>
+                                <span class="beat-tag">Melodic</span>
+                                <span class="beat-tag">World</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>120</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>E Minor</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>3:15</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €35</a>
+                                <a href="#" class="beat-button secondary">Exclusive €80</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beat Card 5 -->
+                    <div class="beat-card fade-in" data-genre="hiphop" data-bpm="95" data-mood="chill">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🎤</div>
+                                <div>Hip Hop Classic Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('boom-bap-revival', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Boom Bap Revival</h3>
+                                    <p class="beat-producer">Prod. by Classic Vibes</p>
+                                </div>
+                                <div class="beat-price">€25</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">Hip Hop</span>
+                                <span class="beat-tag">Boom Bap</span>
+                                <span class="beat-tag">Classic</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>95</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>D Minor</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>3:30</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €25</a>
+                                <a href="#" class="beat-button secondary">Exclusive €60</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beat Card 6 -->
+                    <div class="beat-card fade-in" data-genre="reggaeton" data-bpm="100" data-mood="melodic">
+                        <div class="beat-artwork">
+                            <div class="beat-artwork-placeholder">
+                                <div class="beat-artwork-icon">🌴</div>
+                                <div>Reggaeton Tropical Artwork</div>
+                            </div>
+                            <button class="play-button" onclick="playBeat('latin-heat', this)">
+                                <span class="play-icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="beat-info">
+                            <div class="beat-header">
+                                <div>
+                                    <h3 class="beat-title">Latin Heat</h3>
+                                    <p class="beat-producer">Prod. by Latino Beats</p>
+                                </div>
+                                <div class="beat-price">€30</div>
+                            </div>
+                            <div class="beat-tags">
+                                <span class="beat-tag">Reggaeton</span>
+                                <span class="beat-tag">Latin</span>
+                                <span class="beat-tag">Tropical</span>
+                            </div>
+                            <div class="beat-specs">
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">BPM</span>
+                                    <span>100</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Key</span>
+                                    <span>G Major</span>
+                                </div>
+                                <div class="beat-spec">
+                                    <span class="beat-spec-label">Length</span>
+                                    <span>3:10</span>
+                                </div>
+                            </div>
+                            <div class="beat-actions">
+                                <a href="#" class="beat-button primary">Lease €30</a>
+                                <a href="#" class="beat-button secondary">Exclusive €70</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div style="text-align: center; margin-top: 4rem;">
+                    <button class="cta-button" style="width: auto; padding: 15px 40px;" onclick="loadMore()">
+                        Carica Altri Beat
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Section -->
+        <section class="upload-section" id="upload">
+            <div class="container">
+                <div class="upload-container">
+                    <h2 class="upload-title">Carica la Tua Musica</h2>
+                    <p class="upload-description">
+                        Artista o producer? Condividi i tuoi lavori con noi. 
+                        Potremmo includerli nella nostra selezione ufficiale.
+                    </p>
+
+                    <div class="upload-form">
+                        <div class="form-group">
+                            <label class="form-label">Nome Artista/Producer</label>
+                            <input type="text" class="form-input" placeholder="Il tuo nome artistico">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Titolo del Brano/Beat</label>
+                            <input type="text" class="form-input" placeholder="Nome della traccia">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Genere</label>
+                            <select class="form-input">
+                                <option>Seleziona genere</option>
+                                <option>Hip Hop</option>
+                                <option>Trap</option>
+                                <option>Drill</option>
+                                <option>R&B</option>
+                                <option>Afrobeat</option>
+                                <option>Reggaeton</option>
+                                <option>Altro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Descrizione</label>
+                            <textarea class="form-input form-textarea" placeholder="Racconta qualcosa sulla tua traccia..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Carica File Audio</label>
+                            <div class="file-upload">
+                                <div class="file-upload-icon">🎵</div>
+                                <p>Trascina qui il tuo file o <strong>clicca per scegliere</strong></p>
+                                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                                    Formati supportati: MP3, WAV, AIFF (Max 50MB)
+                                </p>
+                                <input type="file" accept=".mp3,.wav,.aiff">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email di Contatto</label>
+                            <input type="email" class="form-input" placeholder="la-tua-email@example.com">
+                        </div>
+
+                        <button type="submit" class="cta-button">
+                            Invia Traccia per Valutazione
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Audio Player -->
+    <div class="audio-player" id="audioPlayer">
+        <div class="player-info">
+            <div class="player-title" id="playerTitle">Nome Beat</div>
+            <div class="player-producer" id="playerProducer">Producer</div>
+        </div>
+        <div class="player-controls">
+            <button class="player-button" id="playerPlayBtn" onclick="togglePlayPause()">
+                <span class="play-icon">▶</span>
+            </button>
+        </div>
+        <button class="player-close" onclick="closePlayer()">✕</button>
+    </div>
+
+    <script>
+        // Beat data (in a real app, this would come from a backend)
+        const beats = [
+            { id: 'midnight-trap', title: 'Midnight Trap', producer: 'Vibes Team', genre: 'trap', bpm: 140, mood: 'dark' },
+            { id: 'milano-drill', title: 'Milano Drill', producer: 'Alex Beat', genre: 'drill', bpm: 150, mood: 'aggressive' },
+            { id: 'smooth-vibes', title: 'Smooth Vibes', producer: 'Vibe Master', genre: 'rnb', bpm: 85, mood: 'chill' },
+            { id: 'afro-fusion', title: 'Afro Fusion', producer: 'World Beats', genre: 'afrobeat', bpm: 120, mood: 'melodic' },
+            { id: 'boom-bap-revival', title: 'Boom Bap Revival', producer: 'Classic Vibes', genre: 'hiphop', bpm: 95, mood: 'chill' },
+            { id: 'latin-heat', title: 'Latin Heat', producer: 'Latino Beats', genre: 'reggaeton', bpm: 100, mood: 'melodic' }
+        ];
+
+        let currentlyPlaying = null;
+        let currentAudio = null;
+
+        // Filter functionality
+        const genreFilter = document.getElementById('genreFilter');
+        const bpmFilter = document.getElementById('bpmFilter');
+        const moodTags = document.querySelectorAll('.filter-tag');
+        const beatsGrid = document.getElementById('beatsGrid');
+
+        // Initialize filters
+        genreFilter.addEventListener('change', filterBeats);
+        bpmFilter.addEventListener('change', filterBeats);
+
+        moodTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                moodTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                filterBeats();
+            });
+        });
+
+        function filterBeats() {
+            const selectedGenre = genreFilter.value;
+            const selectedBpm = bpmFilter.value;
+            const selectedMood = document.querySelector('.filter-tag.active').dataset.mood;
+            
+            const beatCards = document.querySelectorAll('.beat-card');
+            
+            beatCards.forEach(card => {
+                const genre = card.dataset.genre;
+                const bpm = parseInt(card.dataset.bpm);
+                const mood = card.dataset.mood;
+                
+                let showCard = true;
+                
+                // Filter by genre
+                if (selectedGenre !== 'all' && genre !== selectedGenre) {
+                    showCard = false;
+                }
+                
+                // Filter by BPM
+                if (selectedBpm !== 'all') {
+                    if (selectedBpm === 'slow' && (bpm < 60 || bpm >= 90)) showCard = false;
+                    if (selectedBpm === 'medium' && (bpm < 90 || bpm >= 120)) showCard = false;
+                    if (selectedBpm === 'fast' && (bpm < 120 || bpm >= 150)) showCard = false;
+                    if (selectedBpm === 'very-fast' && bpm < 150) showCard = false;
+                }
+                
+                // Filter by mood
+                if (selectedMood !== 'all' && mood !== selectedMood) {
+                    showCard = false;
+                }
+                
+                card.style.display = showCard ? 'block' : 'none';
+            });
+        }
+
+        // Audio player functionality
+        function playBeat(beatId, button) {
+            const beat = beats.find(b => b.id === beatId);
+            if (!beat) return;
+
+            // Stop current audio if playing
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+
+            // Reset all play buttons
+            document.querySelectorAll('.play-button').forEach(btn => {
+                btn.classList.remove('playing');
+                btn.innerHTML = '<span class="play-icon">▶</span>';
+            });
+
+            if (currentlyPlaying === beatId) {
+                // Stop playing
+                currentlyPlaying = null;
+                closePlayer();
+                return;
+            }
+
+            // Start playing new beat
+            currentlyPlaying = beatId;
+            button.classList.add('playing');
+            button.innerHTML = '<span class="pause-icon">⏸</span>';
+
+            // Show player
+            showPlayer(beat.title, beat.producer);
+
+            // In a real app, you would load and play the actual audio file
+            // For demo purposes, we'll just simulate playback
+            simulateAudioPlayback(beatId, button);
+        }
+
+        function simulateAudioPlayback(beatId, button) {
+            // Simulate 30 second preview
+            setTimeout(() => {
+                if (currentlyPlaying === beatId) {
+                    stopPlayback();
+                }
+            }, 30000);
+        }
+
+        function stopPlayback() {
+            if (currentlyPlaying) {
+                const button = document.querySelector(`.play-button.playing`);
+                if (button) {
+                    button.classList.remove('playing');
+                    button.innerHTML = '<span class="play-icon">▶</span>';
+                }
+                currentlyPlaying = null;
+                closePlayer();
+            }
+        }
+
+        function showPlayer(title, producer) {
+            const player = document.getElementById('audioPlayer');
+            const titleElement = document.getElementById('playerTitle');
+            const producerElement = document.getElementById('playerProducer');
+            const playBtn = document.getElementById('playerPlayBtn');
+
+            titleElement.textContent = title;
+            producerElement.textContent = producer;
+            playBtn.innerHTML = '<span class="pause-icon">⏸</span>';
+            
+            player.style.display = 'flex';
+        }
+
+        function closePlayer() {
+            const player = document.getElementById('audioPlayer');
+            player.style.display = 'none';
+            stopPlayback();
+        }
+
+        function togglePlayPause() {
+            if (currentlyPlaying) {
+                stopPlayback();
+            }
+        }
+
+        function playFeatured() {
+            const button = document.querySelector('.featured-player .play-button');
+            playBeat('milano-vibes', button);
+        }
+
+        // Load more functionality
+        function loadMore() {
+            // In a real app, this would fetch more beats from the backend
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.innerHTML = '<span class="loading"></span> Caricamento...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+                
+                // Show message that all beats are loaded
+                button.textContent = 'Tutti i beat caricati';
+                button.style.opacity = '0.6';
+                setTimeout(() => {
+                    button.style.display = 'none';
+                }, 2000);
+            }, 2000);
+        }
+
+        // File upload functionality
+        const fileUpload = document.querySelector('.file-upload');
+        const fileInput = fileUpload.querySelector('input[type="file"]');
+
+        fileUpload.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileInfo = document.createElement('div');
+                fileInfo.style.marginTop = '1rem';
+                fileInfo.style.padding = '10px';
+                fileInfo.style.background = 'var(--bg-secondary)';
+                fileInfo.style.borderRadius = '8px';
+                fileInfo.style.color = 'var(--primary-gold)';
+                fileInfo.innerHTML = `
+                    <strong>File selezionato:</strong> ${file.name}<br>
+                    <small>Dimensione: ${(file.size / 1024 / 1024).toFixed(2)} MB</small>
+                `;
+                
+                // Remove previous file info
+                const existingInfo = fileUpload.querySelector('div[style*="margin-top"]');
+                if (existingInfo) {
+                    existingInfo.remove();
+                }
+                
+                fileUpload.appendChild(fileInfo);
+            }
+        });
+
+        // Form submission
+        document.querySelector('.upload-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.cta-button');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<span class="loading"></span> Invio in corso...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = 'Traccia Inviata con Successo!';
+                submitBtn.style.background = 'var(--success-color)';
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                    this.reset();
+                    
+                    // Remove file info
+                    const fileInfo = fileUpload.querySelector('div[style*="margin-top"]');
+                    if (fileInfo) {
+                        fileInfo.remove();
+                    }
+                }, 3000);
+            }, 2000);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Beat card hover effects
+        document.querySelectorAll('.beat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const playButton = this.querySelector('.play-button');
+                if (!playButton.classList.contains('playing')) {
+                    playButton.style.transform = 'translate(-50%, -50%) scale(1.1)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const playButton = this.querySelector('.play-button');
+                if (!playButton.classList.contains('playing')) {
+                    playButton.style.transform = 'translate(-50%, -50%) scale(1)';
+                }
+            });
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add some dynamic content loading simulation
+            setTimeout(() => {
+                document.querySelectorAll('.beat-card').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space' && currentlyPlaying) {
+                e.preventDefault();
+                togglePlayPause();
+            }
+            if (e.code === 'Escape' && currentlyPlaying) {
+                closePlayer();
+            }
+        });
+
+        // Responsive adjustments
+        function handleResize() {
+            const player = document.getElementById('audioPlayer');
+            if (window.innerWidth <= 768 && player.style.display === 'flex') {
+                player.style.left = '10px';
+                player.style.right = '10px';
+                player.style.transform = 'none';
+            } else if (player.style.display === 'flex') {
+                player.style.left = '50%';
+                player.style.right = 'auto';
+                player.style.transform = 'translateX(-50%)';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Add some Easter eggs for music producers
+        let konamiCode = [];
+        const targetCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+
+        document.addEventListener('keydown', function(e) {
+            konamiCode.push(e.code);
+            if (konamiCode.length > targetCode.length) {
+                konamiCode.shift();
+            }
+            
+            if (konamiCode.join(',') === targetCode.join(',')) {
+                // Easter egg: show hidden premium beat
+                alert('🎵 Codice producer sbloccato! Hai trovato un beat segreto! 🔥');
+                konamiCode = [];
+            }
+        });
+    </script>
+</body>
+</html>
