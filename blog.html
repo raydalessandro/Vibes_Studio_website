@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Vibes Studio Milano | News, Tips, Tutorial Hip Hop Production</title>
+    <meta name="description" content="Blog di Vibes Studio Milano: news, tutorial sulla produzione hip hop, interviste con artisti, tips per producer e aggiornamenti dalla scena musicale.">
+    <meta name="keywords" content="blog hip hop milano, tutorial produzione musicale, tips producer, news rap italiano, vibes studio blog">
+    <link rel="canonical" href="https://vibesstudio.it/blog.html">
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --secondary-gold: #ff8f00;
+            --bg-dark: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: rgba(255, 193, 7, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-dark) 100%);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories-section {
+            padding: 60px 0;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .categories-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .category-tag:hover,
+        .category-tag.active {
+            background: var(--primary-gold);
+            color: #000;
+            border-color: var(--primary-gold);
+        }
+
+        /* Featured Post */
+        .featured-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .featured-post {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .featured-image {
+            height: 400px;
+            background: linear-gradient(45deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 193, 7, 0.2) 0%, transparent 70%);
+        }
+
+        .featured-image-placeholder {
+            z-index: 2;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .featured-icon {
+            font-size: 4rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .featured-text {
+            padding: 40px;
+        }
+
+        .featured-badge {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 80px 0;
+            background: var(--bg-dark);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 193, 7, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 193, 7, 0.1) 0%, transparent 100%);
+        }
+
+        .blog-image-placeholder {
+            z-index: 2;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-category {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--primary-gold);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 193, 7, 0.1);
+            padding-top: 1rem;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-date {
+            color: var(--primary-gold);
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-description {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 15px 20px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+        }
+
+        .newsletter-button {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Load More */
+        .load-more-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .load-more-button {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 25px;
+            padding: 15px 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-button:hover {
+            background: var(--primary-gold);
+            color: #000;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .categories-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            border-top-color: var(--primary-gold);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Search */
+        .search-section {
+            padding: 40px 0;
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-form {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 15px 50px 15px 20px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+        }
+
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-gold);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <svg class="nav-logo" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="20" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ffc107">VIBES</text>
+                <text x="20" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="300" fill="white">STUDIO</text>
+            </svg>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="servizi.html" class="nav-link">Servizi</a></li>
+                <li><a href="studio.html" class="nav-link">Lo Studio</a></li>
+                <li><a href="beats.html" class="nav-link">Beats</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="page-title">Vibes Blog</h1>
+                <p class="page-subtitle">
+                    News, tutorial, interviste e tutto quello che devi sapere sulla scena hip hop e la produzione musicale
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <div class="search-form">
+                        <input type="text" class="search-input" placeholder="Cerca articoli, tutorial, artisti..." id="searchInput">
+                        <button class="search-button" onclick="performSearch()">
+                            🔍
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="categories-container">
+                    <a href="#" class="category-tag active" data-category="all">Tutti</a>
+                    <a href="#" class="category-tag" data-category="news">News</a>
+                    <a href="#" class="category-tag" data-category="tutorial">Tutorial</a>
+                    <a href="#" class="category-tag" data-category="interviste">Interviste</a>
+                    <a href="#" class="category-tag" data-category="tips">Producer Tips</a>
+                    <a href="#" class="category-tag" data-category="recensioni">Recensioni</a>
+                    <a href="#" class="category-tag" data-category="industry">Industry</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="featured-post fade-in">
+                    <div class="featured-content">
+                        <div class="featured-image">
+                            <div class="featured-image-placeholder">
+                                <div class="featured-icon">🎧</div>
+                                <div>Featured Article Image<br>[Immagine principale articolo]</div>
+                            </div>
+                        </div>
+                        <div class="featured-text">
+                            <div class="featured-badge">In Evidenza</div>
+                            <h2 class="featured-title">Come Produrre Trap nel 2024: Guida Completa</h2>
+                            <p class="featured-excerpt">
+                                Scopri i segreti della produzione trap moderna: dai pattern più utilizzati alle tecniche 
+                                di mixing, fino agli strumenti indispensabili per creare beat che spacchino. 
+                                Una guida completa scritta dal nostro team di producer professionisti.
+                            </p>
+                            <div class="featured-meta">
+                                <div class="meta-item">
+                                    <span>👤</span>
+                                    <span>Alex "Beat" Johnson</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span>📅</span>
+                                    <span>15 Set 2024</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span>⏱️</span>
+                                    <span>12 min di lettura</span>
+                                </div>
+                            </div>
+                            <a href="#" class="read-more">Leggi Tutto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-grid" id="blogGrid">
+                    <!-- Blog Post 1 -->
+                    <article class="blog-card fade-in" data-category="tutorial">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">🎹</div>
+                                <div>Tutorial Image<br>[Foto tutorial mixing]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Tutorial</span>
+                            <h3 class="blog-title">5 Tecniche di Mixing per Voce Rap</h3>
+                            <p class="blog-excerpt">
+                                Impara le tecniche professionali per mixare le voci rap: dall'EQ alla compressione, 
+                                fino agli effetti che fanno la differenza nel sound finale.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Giulia "Mix" Bianchi</span>
+                                </div>
+                                <div class="blog-date">10 Set 2024</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-card fade-in" data-category="interviste">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">🎤</div>
+                                <div>Interview Image<br>[Foto intervista artista]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Interviste</span>
+                            <h3 class="blog-title">Intervista Esclusiva con Shiva</h3>
+                            <p class="blog-excerpt">
+                                Il king della trap italiana racconta la sua evoluzione artistica, i progetti futuri 
+                                e cosa significa essere un punto di riferimento per la nuova generazione.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Marco "Vibe" Rossi</span>
+                                </div>
+                                <div class="blog-date">8 Set 2024</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-card fade-in" data-category="news">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">📰</div>
+                                <div>News Image<br>[Foto evento hip hop]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">News</span>
+                            <h3 class="blog-title">Hip Hop Awards 2024: Tutti i Vincitori</h3>
+                            <p class="blog-excerpt">
+                                Scopri chi ha vinto agli Hip Hop Awards 2024: dalle categorie principali ai premi 
+                                per la produzione, un recap completo della serata più importante del rap italiano.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Redazione Vibes</span>
+                                </div>
+                                <div class="blog-date">5 Set 2024</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 4 -->
+                    <article class="blog-card fade-in" data-category="tips">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">💡</div>
+                                <div>Tips Image<br>[Foto producer setup]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Producer Tips</span>
+                            <h3 class="blog-title">Setup Home Studio: Guida Essenziale</h3>
+                            <p class="blog-excerpt">
+                                Vuoi creare il tuo home studio ma non sai da dove iniziare? Ecco una guida completa 
+                                all'attrezzatura essenziale per iniziare a produrre da casa con budget limitato.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Alex "Beat" Johnson</span>
+                                </div>
+                                <div class="blog-date">2 Set 2024</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 5 -->
+                    <article class="blog-card fade-in" data-category="industry">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">📈</div>
+                                <div>Industry Image<br>[Grafico streaming]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Industry</span>
+                            <h3 class="blog-title">Il Futuro dello Streaming in Italia</h3>
+                            <p class="blog-excerpt">
+                                Analisi del mercato musicale italiano: come stanno cambiando le abitudini di ascolto 
+                                e cosa significa per artisti e producer indipendenti nel 2024.
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Redazione Vibes</span>
+                                </div>
+                                <div class="blog-date">30 Ago 2024</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Blog Post 6 -->
+                    <article class="blog-card fade-in" data-category="recensioni">
+                        <div class="blog-image">
+                            <div class="blog-image-placeholder">
+                                <div class="featured-icon">⭐</div>
+                                <div>Review Image<br>[Foto album cover]</div>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Recensioni</span>
+                            <h3 class="blog-title">Recensione: "Hellboys" di Lazza</h3>
+                            <p class="blog-excerpt">
+                                Analisi approfondita del nuovo progetto di Lazza: produzione, testi, featuring 
+                                e impatto sulla scena rap italiana. Un album che segna una nuova era?
+                            </p>
+                            <div class="blog-meta">
+                                <div class="blog-author">
+                                    <span>👤</span>
+                                    <span>Marco "Vibe" Rossi</span>
+                                </div>
+                                <div class="blog-date">28 Ago 2024</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-section">
+                    <button class="load-more-button" onclick="loadMorePosts()">
+                        Carica Altri Articoli
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-container fade-in">
+                    <h2 class="newsletter-title">Stay in the Loop</h2>
+                    <p class="newsletter-description">
+                        Iscriviti alla nostra newsletter per ricevere gli ultimi articoli, 
+                        tutorial esclusivi e news dalla scena hip hop direttamente nella tua inbox.
+                    </p>
+                    <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                        <input type="email" class="newsletter-input" placeholder="la-tua-email@example.com" required>
+                        <button type="submit" class="newsletter-button">Iscriviti</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Category filtering
+        const categoryTags = document.querySelectorAll('.category-tag');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        categoryTags.forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all tags
+                categoryTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                const selectedCategory = this.dataset.category;
+                filterPosts(selectedCategory);
+            });
+        });
+
+        function filterPosts(category) {
+            blogCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeInUp 0.6s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Search functionality
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (searchTerm.trim() === '') {
+                // Reset filter if search is empty
+                filterPosts('all');
+                return;
+            }
+
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+                const category = card.querySelector('.blog-category').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Enter key search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Load more posts
+        function loadMorePosts() {
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.innerHTML = '<span class="loading"></span> Caricamento...';
+            button.disabled = true;
+            
+            // Simulate loading
+            setTimeout(() => {
+                button.textContent = 'Tutti gli articoli caricati';
+                button.style.opacity = '0.6';
+                
+                setTimeout(() => {
+                    button.style.display = 'none';
+                }, 2000);
+            }, 2000);
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const button = form.querySelector('.newsletter-button');
+            const input = form.querySelector('.newsletter-input');
+            const originalText = button.textContent;
+            
+            button.innerHTML = '<span class="loading"></span>';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.textContent = 'Iscritto! ✅';
+                button.style.background = 'var(--success-color, #28a745)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.background = '';
+                    input.value = '';
+                }, 3000);
+            }, 1500);
+        }
+
+        // Blog card click handlers
+        blogCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.blog-title').textContent;
+                const category = this.querySelector('.blog-category').textContent;
+                
+                // In a real app, this would navigate to the full article
+                alert(`Apertura articolo: "${title}" nella categoria ${category}\n\nQuesta funzionalità sarà implementata con il CMS del blog.`);
+            });
+        });
+
+        // Featured post click handler
+        document.querySelector('.featured-post').addEventListener('click', function() {
+            const title = this.querySelector('.featured-title').textContent;
+            alert(`Apertura articolo in evidenza: "${title}"\n\nQuesta funzionalità sarà implementata con il CMS del blog.`);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic content suggestions based on time of day
+        function updateContentSuggestions() {
+            const hour = new Date().getHours();
+            const searchInput = document.getElementById('searchInput');
+            
+            if (hour >= 6 && hour < 12) {
+                searchInput.placeholder = 'Cerca tutorial mattutini per producer...';
+            } else if (hour >= 12 && hour < 18) {
+                searchInput.placeholder = 'Cerca news e interviste del giorno...';
+            } else {
+                searchInput.placeholder = 'Cerca tips per sessioni serali...';
+            }
+        }
+
+        // Initialize dynamic content
+        updateContentSuggestions();
+
+        // Add keyboard shortcuts for navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'k':
+                        e.preventDefault();
+                        document.getElementById('searchInput').focus();
+                        break;
+                    case '1':
+                        e.preventDefault();
+                        document.querySelector('[data-category="all"]').click();
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        document.querySelector('[data-category="tutorial"]').click();
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        document.querySelector('[data-category="news"]').click();
+                        break;
+                }
+            }
+        });
+
+        // Add reading time calculation
+        function calculateReadingTime(text) {
+            const wordsPerMinute = 200;
+            const words = text.trim().split(/\s+/).length;
+            const minutes = Math.ceil(words / wordsPerMinute);
+            return `${minutes} min di lettura`;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add subtle animations to cards
+            setTimeout(() => {
+                blogCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 500);
+            
+            // Show keyboard shortcuts hint
+            setTimeout(() => {
+                console.log('🔥 Vibes Studio Blog');
+                console.log('Shortcuts: Ctrl/Cmd + K (search), Ctrl/Cmd + 1-3 (categories)');
+            }, 2000);
+        });
+    </script>
+</body>
+  </html>
