@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibes Studio - Studio di Registrazione Milano Baggio | Recording, Mix, Master, Beatmaking</title>
+    <meta name="description" content="Vibes Studio Milano Baggio: studio di registrazione professionale per hip hop, rap, trap. Recording, mix & master, beatmaking. Prenota la tua sessione.">
+    <meta name="keywords" content="studio registrazione milano, recording studio baggio, mix master milano, beatmaking, hip hop studio, rap studio italia">
+    <link rel="canonical" href="https://vibesstudio.it/">
+    <meta property="og:title" content="Vibes Studio Milano - Recording Studio Professionale">
+    <meta property="og:description" content="Studio di registrazione professionale a Milano Baggio. Recording, mix & master, beatmaking per hip hop e rap.">
+    <meta property="og:type" content="website">
+    <link rel="preload" href="#" as="font" type="font/woff2" crossorigin>
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --secondary-gold: #ff8f00;
+            --bg-dark: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --border-color: rgba(255, 193, 7, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--bg-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 180px; /* Aumentato a 180px per spazio completo logo */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 193, 7, 0.05) 0%, transparent 50%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,193,7,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,193,7,0.05)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,193,7,0.08)"/></svg>');
+            animation: pulse 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        /* Logo migliorato */
+        .logo-container {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .main-logo {
+            width: 320px;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.3));
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            0% { filter: drop-shadow(0 0 20px rgba(255, 193, 7, 0.3)); }
+            100% { filter: drop-shadow(0 0 30px rgba(255, 193, 7, 0.6)); }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .location {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 193, 7, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: var(--primary-gold);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: #000;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.5);
+        }
+
+        /* Services Preview */
+        .services-preview {
+            padding: 100px 0;
+            background: var(--bg-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0.1;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 193, 7, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::after {
+            opacity: 0.2;
+            transform: scale(1.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-price {
+            color: var(--primary-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-link:hover {
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-card);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 193, 7, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                padding: 20px;
+                gap: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .main-logo {
+                width: 250px;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Performance optimizations */
+        .service-card,
+        .cta-button {
+            will-change: transform;
+        }
+
+        /* Lazy loading placeholder */
+        .lazy-load {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <svg class="nav-logo" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Logo navbar ridotto -->
+                <text x="20" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#ffc107">VIBES</text>
+                <text x="20" y="50" font-family="Arial, sans-serif" font-size="8" font-weight="300" fill="white">STUDIO</text>
+            </svg>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="servizi.html" class="nav-link">Servizi</a></li>
+                <li><a href="studio.html" class="nav-link">Lo Studio</a></li>
+                <li><a href="beats.html" class="nav-link">Beats</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Float Button - FIXED -->
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/393463086154?text=Ciao%20Vibes%20Studio!%20Vorrei%20informazioni%20sui%20vostri%20servizi', '_blank')" title="Contattaci su WhatsApp" style="cursor: pointer;">
+        <span class="whatsapp-float-icon">💬</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <!-- Logo VIBES migliorato e più leggibile -->
+                <svg class="main-logo" viewBox="0 0 400 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Cerchio bianco di sfondo -->
+                    <circle cx="200" cy="75" r="70" fill="white"/>
+                    
+                    <!-- Logo VIBES con lettere più definite -->
+                    <g transform="translate(120, 45)">
+                        <!-- V -->
+                        <path d="M0 5 L15 45 L30 5" stroke="#ffc107" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 5 L15 30 L25 5" stroke="#ffc107" stroke-width="4" fill="none" stroke-linecap="round"/>
+                        <path d="M10 5 L15 20 L20 5" stroke="#ffc107" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        
+                        <!-- I -->
+                        <rect x="40" y="5" width="8" height="40" fill="black"/>
+                        <rect x="35" y="5" width="18" height="6" fill="black"/>
+                        <rect x="35" y="39" width="18" height="6" fill="black"/>
+                        
+                        <!-- B -->
+                        <rect x="65" y="5" width="8" height="40" fill="black"/>
+                        <rect x="73" y="5" width="15" height="6" fill="black"/>
+                        <rect x="73" y="20" width="12" height="6" fill="black"/>
+                        <rect x="73" y="39" width="15" height="6" fill="black"/>
+                        <rect x="85" y="11" width="6" height="9" fill="black"/>
+                        <rect x="82" y="26" width="6" height="13" fill="black"/>
+                        
+                        <!-- E -->
+                        <rect x="100" y="5" width="8" height="40" fill="black"/>
+                        <rect x="108" y="5" width="15" height="6" fill="black"/>
+                        <rect x="108" y="20" width="12" height="6" fill="black"/>
+                        <rect x="108" y="39" width="15" height="6" fill="black"/>
+                        
+                        <!-- S -->
+                        <rect x="135" y="5" width="15" height="6" fill="black"/>
+                        <rect x="135" y="5" width="8" height="20" fill="black"/>
+                        <rect x="135" y="20" width="15" height="6" fill="black"/>
+                        <rect x="142" y="26" width="8" height="19" fill="black"/>
+                        <rect x="135" y="39" width="15" height="6" fill="black"/>
+                    </g>
+                    
+                    <!-- STUDIO sotto -->
+                    <text x="200" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="black" letter-spacing="3px">STUDIO</text>
+                </svg>
+            </div>
+            
+            <h1 class="hero-title">Where Music Comes Alive</h1>
+            <p class="hero-subtitle">Studio di produzione musicale professionale nel cuore di Milano</p>
+            
+            <div class="location">
+                📍 Milano, Baggio
+            </div>
+            
+            <a href="servizi.html" class="cta-button">Scopri i Servizi</a>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi</h2>
+            
+            <div class="services-grid">
+                <!-- Recording -->
+                <div class="service-card lazy-load">
+                    <div class="service-icon">🎤</div>
+                    <h3 class="service-title">Recording</h3>
+                    <p class="service-description">
+                        Ambiente trattato acusticamente con fonico dedicato per tutta la sessione.
+                    </p>
+                    <div class="service-price">Da €50/ora</div>
+                    <br>
+                    <a href="servizi.html#recording" class="service-link">Scopri di più →</a>
+                </div>
+
+                <!-- Mix & Master -->
+                <div class="service-card lazy-load">
+                    <div class="service-icon">🎚️</div>
+                    <h3 class="service-title">Mix & Master</h3>
+                    <p class="service-description">
+                        Porta la tua traccia a livello professionale con il nostro sound signature.
+                    </p>
+                    <div class="service-price">Da €80 a traccia</div>
+                    <br>
+                    <a href="servizi.html#mixmaster" class="service-link">Scopri di più →</a>
+                </div>
+
+                <!-- Beatmaking -->
+                <div class="service-card lazy-load">
+                    <div class="service-icon">🎹</div>
+                    <h3 class="service-title">Beatmaking</h3>
+                    <p class="service-description">
+                        Beat esclusivi e sessioni personalizzate di 4 ore con il nostro producer.
+                    </p>
+                    <div class="service-price">Da €150</div>
+                    <br>
+                    <a href="beats.html" class="service-link">Ascolta i beat →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Pronto a Creare?</h2>
+            <p class="cta-text">
+                Unisciti agli artisti che hanno scelto Vibes Studio per realizzare la loro musica. 
+                Contattaci per una consulenza gratuita e scopri come possiamo far brillare il tuo talento.
+            </p>
+                            <a href="contatti.html" class="cta-button">Contattaci Ora</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vibes Studio</h3>
+                    <p>Studio di registrazione professionale</p>
+                    <p>Milano, Baggio</p>
+                    <p>📱 Instagram: @v.ibes.studio</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Servizi</h3>
+                    <p><a href="servizi.html#recording">Recording Professionale</a></p>
+                    <p><a href="servizi.html#mixmaster">Mix & Master</a></p>
+                    <p><a href="servizi.html#beatmaking">Beatmaking</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Pagine</h3>
+                    <p><a href="chi-siamo.html">Chi Siamo</a></p>
+                    <p><a href="studio.html">Lo Studio</a></p>
+                    <p><a href="beats.html">Beats & Tracce</a></p>
+                    <p><a href="blog.html">Blog</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Generi Musicali</h3>
+                    <p>Hip Hop • Rap • Trap</p>
+                    <p>R&B • Afrobeat • Pop</p>
+                    <p>Reggaeton • Drill</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vibes Studio Milano. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Navbar background on scroll
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.backdropFilter = 'blur(15px)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lazy loading animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('loaded');
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.lazy-load').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Preload critical resources
+        window.addEventListener('load', () => {
+            const criticalImages = [
+                // Aggiungi qui le immagini critiche quando le inserisci
+            ];
+            
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+    </script>
+</body>
+      </html>
