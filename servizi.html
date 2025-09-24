@@ -428,6 +428,16 @@
             margin-right: auto;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
         /* Mobile Styles */
         @media (max-width: 768px) {
             .services-grid {
@@ -445,6 +455,10 @@
                 width: fit-content;
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            .mobile-menu-btn {
+                display: block;
             }
 
             .nav-menu {
@@ -547,7 +561,7 @@
                 <li><a href="contatti.html" class="nav-link">Contatti</a></li>
             </ul>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn" style="display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; padding: 5px;" aria-label="Menu">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
@@ -908,4 +922,4 @@
         });
     </script>
 </body>
-  </html>
+</html>
