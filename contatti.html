@@ -83,6 +83,18 @@
             color: var(--primary-gold);
         }
 
+        /* Stile pulsante menu mobile */
+        .mobile-menu-btn {
+            display: none; /* Nascosto di default su desktop */
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
         /* Main Content */
         .main-content {
             margin-top: 80px;
@@ -439,6 +451,16 @@
         }
 
         /* Mobile Styles */
+        @media (max-width: 1024px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .nav-link {
+                font-size: 0.75rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
@@ -475,15 +497,9 @@
             .nav-menu.active {
                 display: flex;
             }
-        }
 
-        @media (max-width: 1024px) {
-            .nav-menu {
-                gap: 1rem;
-            }
-            
-            .nav-link {
-                font-size: 0.75rem;
+            .mobile-menu-btn {
+                display: block; /* Mostra il pulsante su mobile */
             }
         }
 
@@ -501,7 +517,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <svg class="nav-logo" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -519,7 +534,7 @@
                 <li><a href="contatti.html" class="nav-link active">Contatti</a></li>
             </ul>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn" style="display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; padding: 5px;" aria-label="Menu">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
                 <span style="display: block; width: 25px; height: 3px; background: var(--text-primary); margin: 5px 0; transition: 0.3s;"></span>
@@ -527,13 +542,11 @@
         </div>
     </nav>
 
-    <!-- WhatsApp Float Button -->
     <a href="https://wa.me/393463086154?text=Ciao%20Vibes%20Studio!%20Vorrei%20informazioni%20sui%20vostri%20servizi" class="whatsapp-float" target="_blank" title="Contattaci su WhatsApp">
         <span class="whatsapp-float-icon">📱</span>
     </a>
 
     <main class="main-content">
-        <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
                 <h1 class="page-title">Contattaci</h1>
@@ -543,13 +556,11 @@
             </div>
         </section>
 
-        <!-- Contact Methods -->
         <section class="contact-methods">
             <div class="container">
                 <h2 class="section-title fade-in">Come Raggiungerci</h2>
                 
                 <div class="contact-grid">
-                    <!-- WhatsApp -->
                     <div class="contact-card fade-in">
                         <div class="contact-icon whatsapp-icon">📱</div>
                         <h3 class="contact-title">WhatsApp</h3>
@@ -568,7 +579,6 @@
                         </a>
                     </div>
 
-                    <!-- Instagram -->
                     <div class="contact-card fade-in">
                         <div class="contact-icon instagram-icon">📸</div>
                         <h3 class="contact-title">Instagram</h3>
@@ -587,7 +597,6 @@
                         </a>
                     </div>
 
-                    <!-- Location -->
                     <div class="contact-card fade-in">
                         <div class="contact-icon location-icon">📍</div>
                         <h3 class="contact-title">Dove Siamo</h3>
@@ -606,7 +615,6 @@
                         </a>
                     </div>
 
-                    <!-- Orari -->
                     <div class="contact-card fade-in">
                         <div class="contact-icon time-icon">⏰</div>
                         <h3 class="contact-title">Orari & Disponibilità</h3>
@@ -627,7 +635,6 @@
             </div>
         </section>
 
-        <!-- Contact Form -->
         <section class="contact-form-section">
             <div class="container">
                 <div class="form-container">
@@ -693,7 +700,6 @@
             </div>
         </section>
 
-        <!-- Info Section -->
         <section class="info-section">
             <div class="container">
                 <div class="info-grid fade-in">
@@ -894,3 +900,4 @@ Inviato dal modulo contatti del sito web.`;
     </script>
 </body>
 </html>
+
